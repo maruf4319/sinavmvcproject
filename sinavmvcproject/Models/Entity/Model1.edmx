@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mvcprojectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adsoyad" Type="nchar" MaxLength="10" />
+          <Property Name="kadı" Type="varchar" MaxLength="50" />
+          <Property Name="şifre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="akademikp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="isim" Type="varchar" MaxLength="50" />
+          <Property Name="soyisim" Type="varchar" MaxLength="50" />
+          <Property Name="kadı" Type="varchar" MaxLength="50" />
+          <Property Name="sifre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ogrenci">
+          <Key>
+            <PropertyRef Name="ogid" />
+          </Key>
+          <Property Name="ogid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ogad" Type="varchar" MaxLength="50" />
+          <Property Name="ogsoyad" Type="varchar" MaxLength="50" />
+          <Property Name="ogbolum" Type="varchar" MaxLength="50" />
+          <Property Name="ogkredi" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="mvcprojectModelStoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="akademikp" EntityType="Self.akademikp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ogrenci" EntityType="Self.ogrenci" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mvcprojectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adsoyad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="kadı" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="şifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="akademikp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="isim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="soyisim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kadı" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ogrenci">
+          <Key>
+            <PropertyRef Name="ogid" />
+          </Key>
+          <Property Name="ogid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ogad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ogsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ogbolum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ogkredi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="mvcprojectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admin" EntityType="Self.admin" />
+          <EntitySet Name="akademikp" EntityType="Self.akademikp" />
+          <EntitySet Name="ogrenci" EntityType="Self.ogrenci" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mvcprojectModelStoreContainer" CdmEntityContainer="mvcprojectEntities">
+          <EntitySetMapping Name="admin">
+            <EntityTypeMapping TypeName="mvcprojectModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="adsoyad" ColumnName="adsoyad" />
+                <ScalarProperty Name="kadı" ColumnName="kadı" />
+                <ScalarProperty Name="şifre" ColumnName="şifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="akademikp">
+            <EntityTypeMapping TypeName="mvcprojectModel.akademikp">
+              <MappingFragment StoreEntitySet="akademikp">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="isim" ColumnName="isim" />
+                <ScalarProperty Name="soyisim" ColumnName="soyisim" />
+                <ScalarProperty Name="kadı" ColumnName="kadı" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ogrenci">
+            <EntityTypeMapping TypeName="mvcprojectModel.ogrenci">
+              <MappingFragment StoreEntitySet="ogrenci">
+                <ScalarProperty Name="ogid" ColumnName="ogid" />
+                <ScalarProperty Name="ogad" ColumnName="ogad" />
+                <ScalarProperty Name="ogsoyad" ColumnName="ogsoyad" />
+                <ScalarProperty Name="ogbolum" ColumnName="ogbolum" />
+                <ScalarProperty Name="ogkredi" ColumnName="ogkredi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
