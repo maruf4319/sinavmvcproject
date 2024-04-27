@@ -1,8 +1,37 @@
-﻿
+﻿﻿@using sinavmvcproject.Models.Entity;
+@model List<ogrenci>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Öğrenci ID</th>
+        <th>Öğrenci Adı</th>
+        <th>Öğrenci Soyadı</th>
+        <th>Öğrenci Bölüm</th>
+        <th>Öğrenci Kredi</th>
+
+
+
+    </tr>
+    <tbody>
+        @foreach (var ogr in Model)
+        {
+            <tr>
+                <td>@ogr.ogid</td>
+                <td>@ogr.ogad</td>
+                <td>@ogr.ogsoyad</td>
+                <td>@ogr.ogbolum</td>
+                <td>@ogr.ogkredi</td>
+                <td>
+                    <a href="~/Ogrenci/Sil/@ogr.ogid" class="btn btn-danger">Sil</a>
+                    <a href="~/Ogrenci/OgrenciGuncelle/@ogr.ogid" class="btn btn-success">Guncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="~/Ogrenci/YeniOgrenci" class="btn btn-primary">Yeni Öğrenci Kaydı</a>
 

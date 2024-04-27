@@ -1,0 +1,34 @@
+﻿@model sinavmvcproject.Models.Entity.ogrenci
+@{
+    ViewBag.Title = "OgrenciGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Ogrenci", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ogad)
+        @Html.TextBoxFor(m => m.ogad, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ogsoyad)
+        @Html.TextBoxFor(m => m.ogsoyad, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ogbolum)
+        @Html.TextBoxFor(m => m.ogbolum, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ogkredi)
+        @Html.TextBoxFor(m => m.ogkredi, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.ogid)
+    <div style="margin-top: 10px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}
+
+

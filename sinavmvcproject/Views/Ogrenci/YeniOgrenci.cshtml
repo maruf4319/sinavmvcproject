@@ -1,0 +1,28 @@
+﻿﻿@model sinavmvcproject.Models.Entity.ogrenci
+@{
+    ViewBag.Title = "YeniOgrenci";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Öğrenci Adı</label>
+        <input type="text" class="form-control" name="ogad" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Soyadı</label>
+        <input type="text" class="form-control" name="ogsoyad" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Bölümü</label>
+        <input type="text" class="form-control" name="ogbolum" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Kredisi</label>
+        <input type="text" class="form-control" name="ogkredi" />
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-primary">Öğrenci Ekle</button>
+    </div>
+</form>
+

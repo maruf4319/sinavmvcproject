@@ -1,0 +1,36 @@
+﻿﻿@using sinavmvcproject.Models.Entity;
+@model List<akademikp>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Personel ID</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyadı</th>
+        <th>Personel Kullanıcı Adı</th>
+        <th>Personel Şifre</th>
+
+
+
+    </tr>
+    <tbody>
+        @foreach (var prsnl in Model)
+        {
+            <tr>
+                <td>@prsnl.id</td>
+                <td>@prsnl.isim</td>
+                <td>@prsnl.soyisim</td>
+                <td>@prsnl.kadı</td>
+                <td>@prsnl.sifre</td>
+                <td>
+                    <a href="~/Akademik/Sil/@prsnl.id" class="btn btn-danger">Sil</a>
+                    <a href="~/Akademik/PersonelGuncelle/@prsnl.id" class="btn btn-success">Guncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="~/Ogrenci/YeniOgrenci" class="btn btn-primary">Yeni Öğrenci Kaydı</a>
